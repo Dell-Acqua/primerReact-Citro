@@ -1,12 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+
 
 function App() {
   return (
     <>
-    <h1>Mi primer app en React</h1>
-    <li>1</li>
-    <li>2</li>
+      <NavBar/>
+
+      <ItemListContainer greeting='Bienvenido a Tienda Dell´Acqua'></ItemListContainer>
+
     </>
   );
 }

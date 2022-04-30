@@ -1,5 +1,5 @@
 import portada from "./img/portada2.jpg"
-
+import ItemList from "./ItemList"
 
 const ItemListContainer = ({greeting}) => {
   return (
@@ -12,6 +12,8 @@ const ItemListContainer = ({greeting}) => {
     </div>
       </div>
     <div><img src={portada} alt="" width="100%"/></div>
+    <div class="divider ">Productos Destacados</div>
+    <div><ItemList/></div>
 
     </>
   )

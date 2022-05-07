@@ -1,17 +1,18 @@
+import { Link } from "react-router-dom"
 
 const ItemsCard = ({itemsData}) => {
 
   return (
 <>
-    <div class="px-5">
-        <div class="card w-45 bg-base-100 shadow-xl image-full">
+    <div className="px-5">
+        <div className="card w-45 bg-base-100 shadow-xl image-full">
             <figure><img src={itemsData.pictureUrl} alt="item" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">{itemsData.title}</h2>
+            <div className="card-body">
+                <h2 className="card-title">{itemsData.title}</h2>
                 <p>{itemsData.description}</p>
                 <h3>Precio:{itemsData.price}</h3>
-                <div class="card-actions justify-center">
-                <button class="btn btn-primary">Ver Producto</button>
+                <div className="card-actions justify-center">
+                <Link to={`/item/${itemsData.id}`} className="btn btn-primary">Ver Producto</Link>
                 </div>
             </div>
         </div>

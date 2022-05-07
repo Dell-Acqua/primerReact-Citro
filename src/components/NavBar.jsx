@@ -1,4 +1,5 @@
 import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget"
 import logo from "./img/head.png"
 import vineta from "./img/vineta3.png"
@@ -11,20 +12,19 @@ const estiloVineta = {
 const NavBar = () => {
   return (
     <header>
-        <div class="flex justify-center ">
+        <div className="flex justify-center ">
             <img src={logo} alt="" width="50%" />
         </div>
         
     <div>
-        <div class="navbar bg-base-300">
-        <div class="flex-1">
-            <a><img src={vineta} alt="" width="25%" style={estiloVineta}/></a>
+        <div className="navbar bg-base-300">
+        <div className="flex-1">
+            <Link to='/'><img src={vineta} alt="" width="25%" style={estiloVineta}/></Link>
         </div>
-        <div class="flex-none">
-            <ul class="menu menu-horizontal p-0">
-            <li><a class="btn btn-success mx-3">Vegetales Hidroponicos</a></li>
-            <li><a class="btn btn-success mx-3">Kits Caseros</a></li>
-            <li><a class="btn btn-success mx-3">Kits Profesionales</a></li>
+        <div className="flex-none">
+            <ul className="menu menu-horizontal p-0">
+            <li><Link to='/' className="btn btn-success mx-3">Home</Link></li>
+            <li><Link to='/productos' className="btn btn-success mx-3">Productos</Link></li>
             </ul>
         </div>
         <div><CartWidget/></div>

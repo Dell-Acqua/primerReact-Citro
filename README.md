@@ -1,3 +1,5 @@
-# Tienda de productos hidroponicos creada en curso React de CoderHouse
+# Tienda de productos hidroponicos Dell'Acqua creada en curso React JS de CoderHouse
 
-Se va codeando y actualizando a medida que va avanzando el curso
+Dell'Acqua es una empresa creada por dos amigos dedicada al cultivo de vegetales hidroponicos y sistemas de hidroponia caseros.
+
+Se utiliza DaysiUI, React Router DOM, entre otras tecnologias.

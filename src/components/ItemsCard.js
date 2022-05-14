@@ -1,6 +1,13 @@
+
 import { Link } from "react-router-dom"
 
+
+
 const ItemsCard = ({itemsData}) => {
+
+
+
+
 
   return (
 <>
@@ -10,7 +17,7 @@ const ItemsCard = ({itemsData}) => {
             <div className="card-body">
                 <h2 className="card-title">{itemsData.title}</h2>
                 <p>{itemsData.description}</p>
-                <h3>Precio:{itemsData.price}</h3>
+                <h3>Precio: ${itemsData.price}</h3>
                 <div className="card-actions justify-center">
                 <Link to={`/item/${itemsData.id}`} className="btn btn-primary">Ver Producto</Link>
                 </div>
@@ -18,6 +25,6 @@ const ItemsCard = ({itemsData}) => {
         </div>
     </div>
 </>
-  )
-}
+  );
+};
 export default ItemsCard

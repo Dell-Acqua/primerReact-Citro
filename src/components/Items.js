@@ -14,3 +14,4 @@ export const items = [
     {id:5,title:'Kit HidroHome',description:'Kit para cultivar tus vegetales en casa.',price:5500,categoria:'kits_caseros',stock:1,pictureUrl:imgKitHidroHome},
     {id:6,title:'Kit Soluciones',description:'Kit de Soluciones A y B necesarias para seguir cultivando.',price:1900,categoria:'kits_caseros',stock:10,pictureUrl:imgKitSoluciones},
 ]
+

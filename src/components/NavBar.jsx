@@ -24,10 +24,13 @@ const NavBar = () => {
         <div className="flex-none">
             <ul className="menu menu-horizontal p-0">
             <li><Link to='/' className="btn btn-success mx-3">Home</Link></li>
-            <li><Link to='/productos' className="btn btn-success mx-3">Productos</Link></li>
+            <li><Link to='/productos' className="btn btn-success mx-3">TodosProductos</Link></li>
+            <li><Link to='/productos/kits' className="btn btn-success mx-3">Kits Caseros</Link></li>
+            <li><Link to='/productos/vegetales' className="btn btn-success mx-3">Vegetales</Link></li>
+
             </ul>
         </div>
-        <div><CartWidget/></div>
+        <div><Link to="/carrito"><CartWidget/></Link></div>
         
         </div>
     </div>

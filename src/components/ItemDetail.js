@@ -32,7 +32,7 @@ const ItemDetail = ({itemsData}) => {
         {/* <!-- Opciones --> */}
         <div className="mt-4 lg:mt-0 lg:row-span-3">
         <div className="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
-           <img src={itemsData.pictureUrl} alt="" className="object-center object-cover"></img>
+           <img src={itemsData.image} alt="" className="object-center object-cover"></img>
         </div>
       
             <p className="text-3xl text-gray-900 py-5">${itemsData.price}</p>

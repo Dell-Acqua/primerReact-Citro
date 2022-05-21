@@ -13,7 +13,7 @@ const ItemsCard = ({itemsData}) => {
 <>
     <div className="px-5">
         <div className="card w-45 bg-base-100 shadow-xl image-full">
-            <figure><img src={itemsData.pictureUrl} alt="item" /></figure>
+            <figure><img src={itemsData.image} alt="item" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{itemsData.title}</h2>
                 <p>{itemsData.description}</p>

@@ -1,39 +1,61 @@
 import { useEffect, useState } from "react";
-import { items as itemsData } from "./Items";
 import ItemsCard from "./ItemsCard";
+import { collection, docs, doc, getDocs, getFirestore, query, where } from "firebase/firestore"
+import { useParams } from "react-router-dom";
 
 const ItemList = () => {
-    const [items, setItems] = useState([])
-    const [loading, setLoading] = useState( true )
-   useEffect(() => {
-    getItems().then( data => {
-    setItems( data )
-    setLoading( false )
-      })
-   }, [])
+  const [items, setItems] = useState([])
+  const {category} = useParams();
 
-    const getItems = () => {
-      return new Promise( (resolve, reject) => {
-        setTimeout(() => {
-          resolve(itemsData)
-        }, 2000);
-      })
+
+  const getItems = () => {
+
+    if (category){
+
+      
+        const db = getFirestore();
+
+        const q = query(
+          collection(db, "items"),
+          where("category", "==", category)
+        );
+        getDocs(q).then((snapshot) => {
+          if (snapshot.size === 0) {
+            console.log("No hay resultados");
+          }
+          setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
+        });
+      
+    
+
+    } else {
+
+     
+        const db = getFirestore();
+        const itemsData = collection(db, "items");
+
+        getDocs(itemsData).then((snapshot) => {
+          if (snapshot.size === 0) {
+            console.log("No hay elementos");
+          }
+          setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
+        })    
     }
+  }
 
-    return (
+  useEffect(() => {
+    getItems();
+  }, [category])
+
+          return (
       <div className="flex justify-center">
-        { loading ?
-        <>      
-        <progress className="progress w-56 pxy-5"></progress>
-        <br></br>
-        </>       
-        :
-              <div className="flex justify-center">  
+        { <div className="flex justify-center">  
            {items.map( item => <ItemsCard key={item.id} itemsData={item}/> )}
 
         </div>
         }
       </div>
     )
+
 }
 export default ItemList

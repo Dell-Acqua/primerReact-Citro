@@ -2,4 +2,4 @@
 
 Dell'Acqua es una empresa creada por dos amigos dedicada al cultivo de vegetales hidroponicos y sistemas de hidroponia caseros.
 
-Se utiliza DaysiUI, React Router DOM, entre otras tecnologias.
+Se utiliza DaysiUI, React Router DOM, Firebase, entre otras tecnologias.

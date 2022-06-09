@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext"
 import CartItem from "./CartItem";
 
@@ -15,7 +16,10 @@ const CartListItem = () => {
         {carrito ? (carrito.map(producto => {
             return ( <CartItem key={producto.id} item={producto} borrarCarritoPorId={borrarCarritoPorId}/>);
         })): <p>Cargando Items</p>} 
-        {carrito.length ? (<div className="flex justify-center py-5"><button onClick={borrarCarrito} className="btn btn-sm btn-error">Vaciar Carrito</button></div>)
+        {carrito.length ? (<><div className="flex justify-center py-5"><button onClick={borrarCarrito} className="btn btn-sm btn-error">Vaciar Carrito</button></div>
+        <div className="flex justify-center py-5"><Link to="/saveorder" className="btn btn-sm btn-success">Finalizar Compra</Link></div>
+        </>
+        )
         : <p className="stat-title">Carrito Vacio</p>}
         </div>
         <div></div>

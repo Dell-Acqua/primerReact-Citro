@@ -1,3 +1,6 @@
+//No se utiliza esta BD, los datos provienen de Firestore -Firebase
+//
+//
 import imgLechuga from './img/IMG_20201102_103108.jpg'
 import imgRucula from './img/IMG_20201030_163004.jpg'
 import imgTomates from './img/IMG_20201130_115451.jpg'

@@ -3,10 +3,7 @@ import { createContext, useState } from "react";
 export const CartContext = createContext(null);
 
 const CartProvider = (props) => {
-
     const [carrito, setCarrito] = useState([]);
-  
-
 
     const agregarAlCarrito = (itemsData, ctd) => {
         if(carrito.some(i => i.id === itemsData.id)){
@@ -24,20 +21,30 @@ const CartProvider = (props) => {
             setCarrito([...carrito,producto]);
          }
     }
+
     const borrarCarritoPorId = (id) => {
         const nuevoCarrito = [...carrito];
         let index = nuevoCarrito.findIndex(i => i.id === id);
         nuevoCarrito.splice(index,1);
         setCarrito([...nuevoCarrito])
     }
+
     const borrarCarrito = () => {
         setCarrito([]);
     }
 
+    const setTotal = () => {
+        let total = 0;
+        carrito.forEach((item) => {
+            const precio = parseInt(item.price)
+            total = total + precio*item.ctd
+        })
+     return total
+    }
 
   return (
     <CartContext.Provider 
-        value={{carrito,setCarrito,agregarAlCarrito,borrarCarritoPorId,borrarCarrito}}>
+        value={{carrito,setCarrito,agregarAlCarrito,borrarCarritoPorId,borrarCarrito,setTotal}}>
         {props.children}
     </CartContext.Provider>
   )

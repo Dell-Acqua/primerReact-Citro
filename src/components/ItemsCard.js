@@ -1,13 +1,6 @@
-
 import { Link } from "react-router-dom"
 
-
-
 const ItemsCard = ({itemsData}) => {
-
-
-
-
 
   return (
 <>

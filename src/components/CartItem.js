@@ -1,5 +1,3 @@
-
-
 const CartItem = ({item, borrarCarritoPorId}) => {
   return (
       <><div key={item.id} className="py-1">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ItemsCard from "./ItemsCard";
-import { collection, docs, doc, getDocs, getFirestore, query, where } from "firebase/firestore"
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 import { useParams } from "react-router-dom";
 
 const ItemList = () => {
@@ -10,27 +10,21 @@ const ItemList = () => {
 
   const getItems = () => {
 
-    if (category){
-
-      
+    if (category){     
         const db = getFirestore();
 
         const q = query(
           collection(db, "items"),
           where("category", "==", category)
         );
+
         getDocs(q).then((snapshot) => {
           if (snapshot.size === 0) {
             console.log("No hay resultados");
           }
           setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
         });
-      
-    
-
-    } else {
-
-     
+      } else {
         const db = getFirestore();
         const itemsData = collection(db, "items");
 

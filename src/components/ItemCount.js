@@ -1,16 +1,10 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
-import CartWidget from "./CartWidget";
-
-
-
 
 const ItemCount = ({initial, stock, agregado}) => {
 
     const [ctd, setCtd] = useState(initial);
     const [mostrarBoton, setMostrarBoton] = useState(false);
-
-
 
     const agregarProducto = (num) => {
         setCtd(ctd+num);
